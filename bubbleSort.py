@@ -17,6 +17,6 @@ class BubbleSort:
         print(f"Sorted data:       {self.data}")
 
 if __name__ == "__main__":
-    data_random = np.random.randint(10000, size=(10000))
+    data_random = np.random.randint(1000, size=(1000))
     BS = BubbleSort(data_random)
     BS.sort()
