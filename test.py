@@ -3,6 +3,7 @@ import numpy as np
 
 from bubbleSort import BubbleSort
 from insertionSort import InsertionSort
+from mergeSort import MergeSort
 
 data_random = np.random.randint(1000, size=(1000))
 sorted_by_python = np.sort(data_random)
@@ -24,6 +25,15 @@ class TestInsertion(unittest.TestCase):
         IS = InsertionSort(data_random)
         IS.sort()
         self.assertTrue(np.array_equal(IS.data, sorted_by_python))
+
+class TestMerge(unittest.TestCase):
+    def test_against_python_sort_method(self):
+        """
+        Test if using this sorting method you will get same result as if using default python sorting
+        """
+        MS = MergeSort(data_random)
+        MS.sort()
+        self.assertTrue(np.array_equal(MS.data, sorted_by_python))
 
 
 if __name__ == '__main__':
